@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+:root {
+    --main-font: 'Silkscreen', cursive;
+
+    --main-color: #333;
+    --secondary-color : #666;
+    --background-color: #fff;
+    --slider-button-color: #333;
+    --slider-background-color: #efefef;
+    --button-border-color: #999;
+    --button--background-color: #fff;
+    --border-color: #efefef;
+    --icon-filter: brightness(1) invert(0);
+}
+
+[data-theme="dark"] {
+    --main-color: #fff;
+    --secondary-color : #eee;
+    --background-color: rgb(50, 50, 50);
+    --slider-button-color: #fff;
+    --slider-background-color: #999;
+    --button-border-color: #333;
+    --button--background-color: #999;
+    --border-color: #efefef;
+    --icon-filter: brightness(0) invert(1);
+}
+
+body {
+    max-width: 1400px;
+    margin: 12px auto 0;
+    color: var(--main-color);
+    background: var(--background-color);
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.title {
+    display: none;
+    font-size: 35px;
+    font-family: var(--main-font);
+    margin-top: 8px;
+}
+
+.panel-right .title {
+    display: block;
+}
+
+.panel-left {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    border: 1px solid #999;
+}
+
+.canvas {
+    width: 100%;
+    height: 900px;
+}
+
+.panel-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-right > div {
+    margin-bottom: 24px;
+}
+
+.panel-right > div:last-child {
+    margin-bottom: 0;
+}
+
+fieldset {
+    padding: 20px;
+    border-color: var(--border-color);
+    margin-bottom: 20px;
+}
+
+fieldset:last-child {
+    margin-bottom: 0;
+}
+
+legend {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+legend img {
+    width: 35px;
+    filter: var(--icon-filter);
+}
+
+.fieldset-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 8px;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.custom-style-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.custom-style-row span {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.hotkeys-button-row button {
+    width: 100%;
+    padding: 10px 20px;
+    color: var(--main-color);
+    background-color: var(--button--background-color);
+    border: 1px solid var(--button-border-color);
+}
+
+.hotkeys-text-row {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--secondary-color);
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 15px;
+    background: var(--slider-background-color);
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--slider-button-color);
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: var(--slider-button-color);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        display: block;
+        text-align: center;
+    }
+
+    .panel-right .title {
+        display: none;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .canvas {
+        height: 500px;
+    }
+
+    .panel-right {
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+
+    fieldset:last-child {
+        margin-bottom: 24px;
+    }
+
+    .custom-style-row span {
+        flex-direction: row;
+        gap: 16px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .title {
+        font-size: 30px;
+    }
+
+    .canvas {
+        height: 540px;
+    }
+
+    .panel-right {
+        align-items: stretch;
+        flex-direction: row-reverse;
+        gap: 8px;
+        overflow-x: auto;
+    }
+
+    .panel-right::-webkit-scrollbar {
+        display: none;
+    }
+
+    fieldset .fieldset-item {
+        width: 280px;
+    }
+
+    .custom-style-row span {
+        flex-direction: column;
+        gap: 0;
+    }
+}
