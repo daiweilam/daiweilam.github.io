@@ -48,11 +48,19 @@
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 425px) {
     :root {
         --font-size-100: 50px;
         --font-size-72: 36px;
         --font-size-48: 24px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    :root {
+        --font-size-100: 42px;
+        --font-size-48: 18px;
+        --font-size-40: 24px;
     }
 }
 
@@ -399,7 +407,7 @@ img {
 }
 
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 425px) {
     body {
         padding: 6px 12px 12px;
     }
@@ -470,5 +478,32 @@ img {
     .footer-row {
         flex-direction: column;
         gap: 24px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .box-photo-bg {
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 270px;
+    }
+
+    .box-photo {
+        top: 4%;
+        left: 6%;
+        width: 320px;
+        height: 320px;
+    }
+
+    .bgText {
+        top: 50%;
+        left: 20%;
+    }
+
+    .box-text {
+        top: auto;
+        bottom: 36%;
+        right: auto;
     }
 }
