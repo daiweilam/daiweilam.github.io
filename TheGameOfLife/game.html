@@ -1,131 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="target-densitydpi=device-dpi, width=device-width, user-scalable=no, maximum-scale=1, minimum-scale=1"
+    />
     <title>The Game of Life</title>
-    <link rel="stylesheet" href="./game-style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./game-style.css" />
+  </head>
+  <body>
     <a href="./index.html"><h1 class="title">THE GAME OF LIFE</h1></a>
     <div class="container">
-        <div class="panel-left">
-            <div id="canvas" class="canvas"></div>
-        </div>
-        <div class="panel-right" id="panel-right">
-            <a href="./index.html"><h1 class="title">THE GAME OF LIFE</h1></a>
-            <fieldset>
-                <legend>
-                    <img class="title-icon" src="img/frame_rate.webp" alt="frame_rate">
-                    <span>FRAME RATE</span>
-                </legend>
+      <div class="panel-left">
+        <div id="canvas" class="canvas"></div>
+      </div>
+      <div class="panel-right" id="panel-right">
+        <a href="./index.html"><h1 class="title">THE GAME OF LIFE</h1></a>
+        <fieldset>
+          <legend>
+            <img class="title-icon" src="img/frame_rate.webp" alt="frame_rate" />
+            <span>FRAME RATE</span>
+          </legend>
 
-                <div class="fieldset-item">
-                    <label for="speed" id="speedLabel"></label>
-                    <input name="speed" id="speed" type="range" min="5" max="60" value="30">
-                </div>
-            </fieldset>
+          <div class="fieldset-item">
+            <label for="speed" id="speedLabel"></label>
+            <input name="speed" id="speed" type="range" min="5" max="60" value="30" />
+          </div>
+        </fieldset>
 
-            <fieldset>
-                <legend>
-                    <img class="title-icon" src="img/survival_rule.webp" alt="Survival_rule">
-                    <span>SURVIVAL RULE</span>
-                </legend>
+        <fieldset>
+          <legend>
+            <img class="title-icon" src="img/survival_rule.webp" alt="Survival_rule" />
+            <span>SURVIVAL RULE</span>
+          </legend>
 
-                <div class="fieldset-item">
-                    <span>
-                        <label for="neighborsMax" id="neighborsMaxLabel"></label>
-                        <input name="neighborsMax" id="neighborsMax" type="range" min="1" max="6" value="3">
-                    </span>
-                    <span>
-                        <label for="neighborsMin" id="neighborsMinLabel"></label>
-                        <input name="neighborsMin" id="neighborsMin" type="range" min="1" max="4" value="2">
-                    </span>
-                </div>
-            </fieldset>
+          <div class="fieldset-item">
+            <span>
+              <label for="neighborsMax" id="neighborsMaxLabel"></label>
+              <input name="neighborsMax" id="neighborsMax" type="range" min="1" max="6" value="3" />
+            </span>
+            <span>
+              <label for="neighborsMin" id="neighborsMinLabel"></label>
+              <input name="neighborsMin" id="neighborsMin" type="range" min="1" max="4" value="2" />
+            </span>
+          </div>
+        </fieldset>
 
-            <fieldset>
-                <legend>
-                    <img class="title-icon" src="img/brush.webp" alt="brush">
-                    <span>BRUSH</span>
-                </legend>
+        <fieldset>
+          <legend>
+            <img class="title-icon" src="img/brush.webp" alt="brush" />
+            <span>BRUSH</span>
+          </legend>
 
-                <div class="fieldset-item row">
-                    <span>
-                        <input type="radio" id="brushPen" name="brush" value="brushPen" checked>
-                        <label for="brushPen">PEN</label>
-                    </span>
-                    <span>
-                        <input type="radio" id="brushEraser" name="brush" value="brushEraser">
-                        <label for="brushEraser">ERASER</label>
-                    </span>
-                </div>
-            </fieldset>
+          <div class="fieldset-item row">
+            <span>
+              <input type="radio" id="brushPen" name="brush" value="brushPen" checked />
+              <label for="brushPen">PEN</label>
+            </span>
+            <span>
+              <input type="radio" id="brushEraser" name="brush" value="brushEraser" />
+              <label for="brushEraser">ERASER</label>
+            </span>
+          </div>
+        </fieldset>
 
-            <fieldset>
-                <legend>
-                    <img class="title-icon" src="img/custom_style.webp" alt="custom_style">
-                    <span>CUSTOM STYLE</span>
-                </legend>
+        <fieldset>
+          <legend>
+            <img class="title-icon" src="img/custom_style.webp" alt="custom_style" />
+            <span>CUSTOM STYLE</span>
+          </legend>
 
-                <div class="fieldset-item">
-                    <span class="custom-style-row">
-                        <span>
-                            <label for="themeMode">THEME</label>
-                            <select name="themeMode" id="themeMode">
-                                <option selected>LIGHT</option>
-                                <option>DARK</option>
-                            </select>
-                        </span>
+          <div class="fieldset-item">
+            <span class="custom-style-row">
+              <span>
+                <label for="themeMode">THEME</label>
+                <select name="themeMode" id="themeMode">
+                  <option selected>LIGHT</option>
+                  <option>DARK</option>
+                </select>
+              </span>
 
-                        <span>
-                            <label for="colorMode">COLOR</label>
-                            <select name="colorMode" id="colorMode">
-                                <option selected>BLUE</option>
-                                <option>GREEN</option>
-                                <option>RED</option>
-                            </select>
-                        </span>
+              <span>
+                <label for="colorMode">COLOR</label>
+                <select name="colorMode" id="colorMode">
+                  <option selected>BLUE</option>
+                  <option>GREEN</option>
+                  <option>RED</option>
+                </select>
+              </span>
 
-                        <span>
-                            <label for="shapeMode">SHAPE</label>
-                            <select name="shapeMode" id="shapeMode">
-                                <option selected>CIRCLE</option>
-                                <option>SQUARE</option>
-                            </select>
-                        </span>
-                    </span>
-                    <span>
-                        <label for="gridSize" id="gridSizeLabel"></label>
-                        <input name="gridSize" id="gridSize" type="range" min="5" max="50" value="15">
-                    </span>
-                </div>
-            </fieldset>
+              <span>
+                <label for="shapeMode">SHAPE</label>
+                <select name="shapeMode" id="shapeMode">
+                  <option selected>CIRCLE</option>
+                  <option>SQUARE</option>
+                </select>
+              </span>
+            </span>
+            <span>
+              <label for="gridSize" id="gridSizeLabel"></label>
+              <input name="gridSize" id="gridSize" type="range" min="5" max="50" value="15" />
+            </span>
+          </div>
+        </fieldset>
 
-            <fieldset>
-                <legend>
-                    <img class="title-icon" src="img/hot_key.webp" alt="hot_key">
-                    <span>HOTKEY</span>
-                </legend>
+        <fieldset>
+          <legend>
+            <img class="title-icon" src="img/hot_key.webp" alt="hot_key" />
+            <span>HOTKEY</span>
+          </legend>
 
-                <div class="fieldset-item row hotkeys-button-row">
-                    <button id="start">STOP</button>
-                    <button id="restart">RESTART</button>
-                    <button id="clear">CLEAR</button>
-                    <!-- <button id="addPattern">PATTERN</button> -->
-                </div>
+          <div class="fieldset-item row hotkeys-button-row">
+            <button id="start">STOP</button>
+            <button id="restart">RESTART</button>
+            <button id="clear">CLEAR</button>
+            <!-- <button id="addPattern">PATTERN</button> -->
+          </div>
 
-                <small class="hotkeys-text-row">
-                    <span>[S] Start / Stop</span>
-                    <span>[R] Restart</span>
-                    <span>[Space] Clear</span>
-                </small>
-            </fieldset>
-        </div>
+          <small class="hotkeys-text-row">
+            <span>[S] Start / Stop</span>
+            <span>[R] Restart</span>
+            <span>[Space] Clear</span>
+          </small>
+        </fieldset>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
