@@ -2,7 +2,7 @@
 
 #### Portfolio
 
-- [The Game Of Life (2022)](https://taweilan.github.io/TheGameOfLife/)
+- [The Game Of Life (2022)](https://daiweilam.github.io/TheGameOfLife/)
 
   > HTML, CSS, JavaScript, P5.js
 
